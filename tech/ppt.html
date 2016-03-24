@@ -165,7 +165,7 @@
         
     -->
     <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
-        <q align="center">报表开发环境简介</q>
+        <q align="center">数据报表开发</q>
 		<q align="right">by 朱伟杰</q>
     </div>
 
@@ -272,33 +272,63 @@
 			<ul><strong>业务规则</strong>
 				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价格 price &gt;=100</li>
 			</ul>
+			<ul><strong>示例</strong>
+				select task.name,biz.name from (select * from dpods_csc_task where bizId is not null) task left out join dpods_csc_biz biz
+				on task.bizId = biz.id
+
+				select task.name,biz.name from dpods_csc_task task, dpods_csc_biz biz on task.bizId = biz.id 
+				where task.bizId is not null
+			</ul>
 		</ul>
+		
 	</div>
 
 	<div class="step slide" data-x="6000" data-y="-1500">
 		<q align="center"><strong>数据建模以及数据处理</strong></q>
 		<ul align="left">
 			<ul><strong>数据建模</strong>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确定主维度（主表，主键，统计维度）</li>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确定数据模型（表结构）</li>
+			</ul>	
+			<ul><strong>数据处理</strong>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确定模型之间的依赖关系</li>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确定模型的数据计算方式(select语句)</li>
+			</ul>
 		</ul>
+		
+
 	</div>
 
 	<div class="step slide" data-x="7000" data-y="-1500">
 		<q align="center"><strong>验证数据</strong></q>
+		<ul>
+			<ul><strong>验证数量</strong>(结果表 &gt;= 主维度表)
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;必须等于主维度的数量</li>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依次排除法</li>
+			</ul>
+	        <ul><strong>校验数据结果</strong>(计算逻辑是否正确)
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单组数据进行验算</li>
+		</ul>
 	</div>
 
 	<div class="step slide" data-x="8000" data-y="-1500">
 		<q align="center"><strong>建立模型任务，导数据</strong></q>
+		<ul>
+			<li>创建表</li>
+			<li>创建模型文件odl</li>
+			<li>创建数据任务</li>
+			<li>预跑</li>
+		<ul>
 	</div>
 
 	<div class="step slide" data-x="9000" data-y="-1500">
 		<q align="center"><strong>创建报表</strong></q>
+		<ul>
+			<li>创建传输任务</li>
+			<li>报表设计</li>
+			<li>参数设计</li>
+		</ul>
 	</div>
-
-
-
-
-
-	<div class="step slide" data-x="7000" data-y=
 
 
 
